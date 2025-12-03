@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { type FiltersResponse, type Country, type Genre } from "../types/filters";
 
 interface MovieItem {
   kinopoiskId: number;
@@ -20,9 +21,9 @@ interface MovieById {
   shortDescription: string;
   posterUrl: string;
   year: string;
-  genres: string;
+  genres: Genre[];
   ratingKinopoisk: string;
-  countries: string;
+  countries: Country[];
 
 }
 
@@ -48,7 +49,7 @@ export const api = createApi({
     getShows: builder.query<MovieResponse, void>({
       query: () => "/films",
     }),
-    getFilters: builder.query({
+    getFilters: builder.query<FiltersResponse, void>({
       query: () => '/films/filters'
     }),
     getFilteredMovies: builder.query({

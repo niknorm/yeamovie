@@ -3,6 +3,8 @@ import {useGetFilteredMoviesQuery,useGetFiltersQuery,} from "../../../../app/api
 import moviesStyles from "../PopularMovies/PopularMovies.module.css";
 import filtersStyles from "./FiltersBlock.module.css";
 import { Link } from "react-router-dom";
+import type {MovieItem } from "../../../../types/movie";
+import type { Country, Genre } from "../../../../types/filters";
 
 export const FiltersBlock: React.FC = () => {
   const { data: filters } = useGetFiltersQuery();
@@ -14,9 +16,9 @@ export const FiltersBlock: React.FC = () => {
   useEffect(() => {
     if (!genreId && filters) {
       const defaultGenre = filters.genres.find(
-        (g) => g.genre.toLowerCase() === "криминал"
+        (g: Genre) => g.genre.toLowerCase() === "криминал"
       )?.id;
-      if (defaultGenre) setGenreId(defaultGenre);
+      if (defaultGenre) setGenreId(String(defaultGenre));
     }
   }, [filters, genreId]);
 
@@ -36,7 +38,7 @@ export const FiltersBlock: React.FC = () => {
         <div className={filtersStyles.filtersControls}>
           <select value={genreId} onChange={(e) => setGenreId(e.target.value)}>
             <option value="">Жанр</option>
-            {filters?.genres?.map((g) => (
+            {filters?.genres?.map((g: Genre) => (
               <option key={g.id} value={g.id}>
                 {g.genre}
               </option>
@@ -48,7 +50,7 @@ export const FiltersBlock: React.FC = () => {
             onChange={(e) => setCountryId(e.target.value)}
           >
             <option value="">Страна</option>
-            {filters?.countries?.map((c) => (
+            {filters?.countries?.map((c: Country) => (
               <option key={c.id} value={c.id}>
                 {c.country}
               </option>
@@ -79,7 +81,7 @@ export const FiltersBlock: React.FC = () => {
       </div>
 
       <div className={moviesStyles.popularMovies}>
-        {movies?.items?.map((m) => (
+        {movies?.items?.map((m: MovieItem) => (
           <Link
             to={`/movie/${m.kinopoiskId}`}
             key={m.kinopoiskId}
