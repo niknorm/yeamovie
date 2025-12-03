@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
-import {AllMoviePage} from "../pages/AllMoviePage/AllMoviePage";
+import { AllMoviePage } from "../pages/AllMoviePage/AllMoviePage";
 import { MoviePage } from "../pages/MoviePage/MoviePage";
-import { SearchPage }  from "../pages/SearchPage/SearchPage";
+import { SearchPage } from "../pages/SearchPage/SearchPage";
 
 export function AppRoutes() {
   return (

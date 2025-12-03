@@ -5,10 +5,9 @@
   flex-wrap: wrap;
 }
 
-/* общий стиль для всех селектов */
 .filtersControls select {
-  width: 160px;              /* одинаковая ширина */
-  padding: 8px 10px;         /* компактные */
+  width: 160px;
+  padding: 8px 10px;
   font-size: 14px;
   color: grey;
   border: 1px solid grey;
@@ -22,9 +21,8 @@
   padding: 6px 14px;
   font-size: 18px;
   font-weight: 600;
-  background: #080423; 
+  background: #080423;
   border-radius: 15px;
   color: #fff;
   margin-bottom: 14px;
 }
-

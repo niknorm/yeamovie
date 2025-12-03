@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from '../../../../components/Header/Header.module.css'
+import styles from "../../../../components/Header/Header.module.css";
 
 export const SearchInput: React.FC = () => {
   const [value, setValue] = useState("");

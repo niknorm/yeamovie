@@ -1,6 +1,6 @@
 .container {
-    max-width: 1200px;  /* ограничиваем ширину всего приложения */
-    margin: 0 auto;      /* центрируем по горизонтали */
-    padding: 0 20px;     /* отступы слева и справа */
-    box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }

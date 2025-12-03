@@ -1,98 +1,91 @@
 .popularMoviesWrapper {
-    width: 100%;
-    padding: 20px 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    
-  
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .popularMovies {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* ровно 5 колонок */
-  gap: 20px;                             /* отступ между карточками */
-  justify-items: center;                  /* центрируем карточки внутри колонок */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
   width: 100%;
   box-sizing: border-box;
 }
 
 .movieCard {
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.2s ease;
-    width: 180px;
-    max-width: 220px;
-    text-decoration: none;
-    color: black;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  width: 180px;
+  max-width: 220px;
+  text-decoration: none;
+  color: black;
 }
 
 .movieInfo {
-    margin-top: 6px;
-    font-size: 18px;
-    color: gray;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  margin-top: 6px;
+  font-size: 18px;
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-
-
-
 .movieCard:hover {
-    transform: scale(1.03);
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  transform: scale(1.03);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .movieCard img {
-    width: 180px;
-    height: 250px;          /* фиксированная высота */
-    object-fit: cover;      /* чтобы обрезалось красиво */
-    border-radius: 8px;
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .movieCard h3 {
-    margin-top: 8px;
-    font-size: 16px;
-    height: 40px;           /* одинаковая высота */
-    overflow: hidden;       /* скрываем длинные названия */
+  margin-top: 8px;
+  font-size: 16px;
+  height: 40px;
+  overflow: hidden;
 }
 
 .popularMoviesHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* выравниваем по центру */
-  margin-bottom: 20px;        /* отступ сверху от списка фильмов */
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .switcher button {
-    background-color: #fff;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    margin-right: 12px;
-    padding: 4px 8px;
-    transition: color 0.2s;
+  background-color: #fff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 12px;
+  padding: 4px 8px;
+  transition: color 0.2s;
 }
 
 .switcher button.active {
-    background-color: #080423;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 14px;
-    height: 35px;
+  background-color: #080423;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 14px;
+  height: 35px;
 }
 .switcher button:hover {
-    color: #fff;
+  color: #fff;
 }
 
-.showAllLink{
+.showAllLink {
   text-decoration: none;
   color: gray;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s;
 }
-
-

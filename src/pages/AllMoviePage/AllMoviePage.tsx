@@ -23,7 +23,9 @@ export const AllMoviePage: React.FC = () => {
             <h3 className={styles.movieName}>{movie.nameRu}</h3>
             <div className={styles.movieInfo}>
               <span>{movie.year}</span>
-              {movie.ratingKinopoisk && <span>{movie.ratingKinopoisk} / 10</span>}
+              {movie.ratingKinopoisk && (
+                <span>{movie.ratingKinopoisk} / 10</span>
+              )}
             </div>
           </Link>
         ))}

@@ -1,8 +1,8 @@
 .hero {
-  width: 100%;    
-  display: flex;   
-  gap: 20px;    
-  padding: 40px; 
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 40px;
   box-sizing: border-box;
   background-color: #080423;
   border-radius: 10px;
@@ -14,61 +14,61 @@
 }
 
 .info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 20px;
-    color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  color: #fff;
 }
 
 .title {
-    font-size: 36px;
-    font-weight: 700;
-    margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
 }
 
 .subtitle {
-    font-size: 16px;
-    font-weight: 500;
-    color: #ff6b6b;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff6b6b;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .description {
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 520px;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 520px;
 }
 
 .button {
-    display: inline-block;
-    background: #ff3d81;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    width: fit-content;
-    transition: 0.2s;
+  display: inline-block;
+  background: #ff3d81;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: 0.2s;
 }
 
 .button:hover {
-    background: #e63500;
+  background: #e63500;
 }
 
 .posterWrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;  /* центрируем постер внутри колонки */
-    align-items: flex-end;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .poster {
-    width: 520px;
-    height: 700px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.35);
+  width: 520px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.35);
 }

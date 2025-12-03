@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import {useGetFilteredMoviesQuery,useGetFiltersQuery,} from "../../../../app/api";
+import {
+  useGetFilteredMoviesQuery,
+  useGetFiltersQuery,
+} from "../../../../app/api";
 import moviesStyles from "../PopularMovies/PopularMovies.module.css";
 import filtersStyles from "./FiltersBlock.module.css";
 import { Link } from "react-router-dom";
-import type {MovieItem } from "../../../../types/movie";
+import type { MovieItem } from "../../../../types/movie";
 import type { Country, Genre } from "../../../../types/filters";
 
 export const FiltersBlock: React.FC = () => {

@@ -7,10 +7,7 @@ export const HeroMovie: React.FC = () => {
 
   const randomId = moviesData?.items?.[2]?.kinopoiskId;
 
-  const {
-    data: movieData,
-    error,
-  } = useGetMovieByIdQuery(randomId!, {
+  const { data: movieData, error } = useGetMovieByIdQuery(randomId!, {
     skip: !randomId,
   });
 
