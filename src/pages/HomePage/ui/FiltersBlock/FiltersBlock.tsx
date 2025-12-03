@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import {
-  useGetFilteredMoviesQuery,
-  useGetFiltersQuery,
-} from "../../../../app/api";
+import {useGetFilteredMoviesQuery,useGetFiltersQuery,} from "../../../../app/api";
 import moviesStyles from "../PopularMovies/PopularMovies.module.css";
 import filtersStyles from "./FiltersBlock.module.css";
+import { Link } from "react-router-dom";
 
 export const FiltersBlock: React.FC = () => {
   const { data: filters } = useGetFiltersQuery();
@@ -82,7 +80,11 @@ export const FiltersBlock: React.FC = () => {
 
       <div className={moviesStyles.popularMovies}>
         {movies?.items?.map((m) => (
-          <div key={m.kinopoiskId} className={moviesStyles.movieCard}>
+          <Link
+            to={`/movie/${m.kinopoiskId}`}
+            key={m.kinopoiskId}
+            className={moviesStyles.movieCard}
+          >
             <img src={m.posterUrlPreview} alt={m.nameRu} />
 
             <h3 className={moviesStyles.movieName}>{m.nameRu}</h3>
@@ -91,7 +93,7 @@ export const FiltersBlock: React.FC = () => {
               <span>{m.year}</span>
               {m.ratingKinopoisk && <span>{m.ratingKinopoisk} / 10</span>}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -19,14 +19,22 @@ interface MovieById {
   description: string;
   shortDescription: string;
   posterUrl: string;
+  year: string;
+  genres: string;
+  ratingKinopoisk: string;
+  countries: string;
+
 }
+
+const apiUrl = import.meta.env.VITE_API_BASE_URL
+const apiKey = import.meta.env.VITE_API_KEY
 
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://kinopoiskapiunofficial.tech/api/v2.2",
+    baseUrl: apiUrl,
     prepareHeaders: (headers) => {
-      headers.set("X-API-KEY", "d4541eb2-9402-431a-805f-cd42b17875da");
+      headers.set("X-API-KEY", apiKey);
       return headers;
     },
   }),
@@ -49,7 +57,10 @@ export const api = createApi({
 
         if(genreId) params.append('genres', genreId)
         if(countryId) params.append('countries', countryId)
-        if(year)params.append('yearForm', year), params.append('yearTo', year)
+        if(year){
+          params.append('yearForm', year)
+          params.append('yearTo', year)
+        }
         if(rating) params.append('ratingForm', rating)
 
         
@@ -58,6 +69,9 @@ export const api = createApi({
 
         return `/films?${params.toString()}`
       }
+    }),
+    getMovieBySearch: builder.query<MovieResponse, string>({
+      query: (search) => `/films?keyword=${encodeURIComponent(search)}&page=1`
     })
   }),
 });
@@ -67,6 +81,7 @@ export const {
   useGetMovieByIdQuery, 
   useGetShowsQuery, 
   useGetFiltersQuery, 
-  useGetFilteredMoviesQuery 
+  useGetFilteredMoviesQuery,
+  useGetMovieBySearchQuery, 
 } =
   api;

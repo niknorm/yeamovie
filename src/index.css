@@ -2,12 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Acrom', sans-serif;
 }
 
 
-.container {
-  max-width: 1320px;  /* ограничиваем ширину всего приложения */
-  margin: 0 auto;      /* центрируем по горизонтали */
-  padding: 0 20px;     /* отступы слева и справа */
-  box-sizing: border-box;
-}

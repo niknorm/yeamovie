@@ -1,0 +1,54 @@
+.container {
+  max-width: 1320px;  /* ограничиваем ширину всего приложения */
+  margin: 0 auto;      /* центрируем по горизонтали */
+  padding: 0 20px;     /* отступы слева и справа */
+  box-sizing: border-box;
+}
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* растягиваем на весь экран */
+}
+
+.contentWrapper {
+  flex: 1; /* занимает всё пространство между шапкой и футером */
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  align-items: center;     /* по вертикали */
+  padding: 20px;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Стили для загрузки поверх всего контента */
+.loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 4, 35, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loader {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}

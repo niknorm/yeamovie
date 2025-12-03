@@ -1,10 +1,10 @@
 .header {
-  display: flex;                 /* делаем блок горизонтальным */
-  justify-content: center; /* название слева, поиск справа */
-  align-items: center;           /* вертикальное центрирование */
-  padding: 20px 40px;            /* отступы сверху/снизу и слева/справа */
-  background-color: #080423;     /* темный фон */
-  color: white;                  /* цвет текста */
+  display: flex;     
+  justify-content: center; 
+  align-items: center;           
+  padding: 20px 40px;           
+  background-color: #080423;     
+  color: white;                  
   position: relative;
 }
 
@@ -13,7 +13,11 @@
   left: 400px;
   font-size: 34px;
   font-weight: bold;
-  color: #ff3d81;
+  color: #ff3d81
+}
+.headerTitle a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .headerSearch {
@@ -21,10 +25,7 @@
   font-size: 16px;
   border-radius: 15px;
   border: none;
-  width: 350px;                  /* ширина поля поиска */
+  width: 350px;                  
+  
 }
 
-.header__search:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #ff3d00; /* легкий эффект при фокусе */
-}

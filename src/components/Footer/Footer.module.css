@@ -1,10 +1,10 @@
 .footer {
-  display: flex;                 /* делаем блок горизонтальным */
-  justify-content: center; /* название слева, поиск справа */
-  align-items: center;           /* вертикальное центрирование */
-  padding: 20px 40px;            /* отступы сверху/снизу и слева/справа */
-  background-color: #080423;     /* темный фон */
-  color: white;                  /* цвет текста */
+  display: flex;                 
+  justify-content: center; 
+  align-items: center;           
+  padding: 20px 40px;            
+  background-color: #080423;     
+  color: white;                  
   position: relative;
   height: 80px;
 }
@@ -17,3 +17,12 @@
   color: #ff3d81;
 }
 
+.footer a {
+  text-decoration: none;
+  color: gray
+}
+
+.footerLinks {
+  display: flex;
+  gap: 150px;
+}
