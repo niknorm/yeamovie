@@ -1,19 +1,72 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+interface MovieItem {
+  kinopoiskId: number;
+  nameRu: string;
+  posterUrl: string;
+  posterUrlPreview: string;
+  year: number;
+  ratingKinopoisk?: number;
+}
+interface MovieResponse {
+  total: number;
+  totalPages: number;
+  items: MovieItem[];
+}
+interface MovieById {
+  kinopoiskId: number;
+  nameRu: string;
+  description: string;
+  shortDescription: string;
+  posterUrl: string;
+}
 
 export const api = createApi({
-    reducerPath: 'api',
-    baseQuery: fetchBaseQuery({
-        baseUrl: "https://api.poiskkino.dev/v1.4",
-        prepareHeaders: (headers) => {
-            headers.set('X-API-KEY', '')
-            return headers
-        },
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://kinopoiskapiunofficial.tech/api/v2.2",
+    prepareHeaders: (headers) => {
+      headers.set("X-API-KEY", "d4541eb2-9402-431a-805f-cd42b17875da");
+      return headers;
+    },
+  }),
+  endpoints: (builder) => ({
+    getMovies: builder.query<MovieResponse, void>({
+      query: () => "/films/collections",
     }),
-    endpoints: (builder) => ({
-        getRandomMovie: builder.query({
-            query: () => '/movie/random',
-        }),
+    getMovieById: builder.query<MovieById, number>({
+      query: (id) => `films/${id}`,
     }),
-})
+    getShows: builder.query<MovieResponse, void>({
+      query: () => "/films",
+    }),
+    getFilters: builder.query({
+      query: () => '/films/filters'
+    }),
+    getFilteredMovies: builder.query({
+      query: ({genreId, countryId, year, rating, page = 1}) => {
+        const params = new URLSearchParams()
 
-export const {useGetRandomMovieQuery} = api
+        if(genreId) params.append('genres', genreId)
+        if(countryId) params.append('countries', countryId)
+        if(year)params.append('yearForm', year), params.append('yearTo', year)
+        if(rating) params.append('ratingForm', rating)
+
+        
+        params.append('page', String(page))
+        params.append('order', 'RATING')
+
+        return `/films?${params.toString()}`
+      }
+    })
+  }),
+});
+
+export const {
+  useGetMoviesQuery, 
+  useGetMovieByIdQuery, 
+  useGetShowsQuery, 
+  useGetFiltersQuery, 
+  useGetFilteredMoviesQuery 
+} =
+  api;

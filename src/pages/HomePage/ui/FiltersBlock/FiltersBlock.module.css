@@ -1,0 +1,30 @@
+.filtersControls {
+  display: flex;
+  gap: 18px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* общий стиль для всех селектов */
+.filtersControls select {
+  width: 160px;              /* одинаковая ширина */
+  padding: 8px 10px;         /* компактные */
+  font-size: 14px;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filtersTitle {
+  width: fit-content;
+  padding: 6px 14px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #080423; 
+  border-radius: 15px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+

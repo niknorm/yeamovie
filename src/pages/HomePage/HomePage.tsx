@@ -1,15 +1,16 @@
-import FiltersBlock from "./ui/FiltersBlock/FiltersBlock"
-import HeroMovie from "./ui/HeroMovie/HeroMovie"
-import PopularMovies from "./ui/PopularMovies/PopularMovies"
+import { FiltersBlock } from "./ui/FiltersBlock/FiltersBlock"
+import { HeroMovie } from "./ui/HeroMovie/HeroMovie"
+import { PopularMovies } from "./ui/PopularMovies/PopularMovies"
+import styles from './layout.module.css'
 
 
 function HomePage() {
   return (
-    <>
-    <HeroMovie />
-    <PopularMovies />
-    <FiltersBlock />
-    </>
+    <div className={styles.container}>
+        <HeroMovie />
+        <PopularMovies />
+        <FiltersBlock />
+    </div>
   )
 }
 

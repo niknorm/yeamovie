@@ -1,5 +1,6 @@
 import { AppRoutes } from "./app/routes"
-import Header from "./components/Header/Header"
+import { Footer } from "./components/Footer/Footer"
+import { Header } from "./components/Header/Header"
 
 
 
@@ -8,7 +9,10 @@ function App() {
   return (
     <>
     <Header />
-    <AppRoutes />    
+    <div className='container'>
+      <AppRoutes />    
+    </div>
+    <Footer />
     </>
    )
 }
